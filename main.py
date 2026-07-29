@@ -509,6 +509,7 @@ HOME_TEMPLATE = """
     </div>
     {% endfor %}
   </div>
+  <p class="text-center text-muted small mt-4 mb-0">Developed by Jerry Lief R. Gamilla</p>
 </div>
 
 {% if featured %}
