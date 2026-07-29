@@ -1755,7 +1755,11 @@ def initialize_database():
 # ENTRY POINT
 # ==============================================================================
 
+# Run once whenever this module is imported (covers both `python main.py` and
+# production servers like gunicorn/Render that import `app` from this module
+# without ever executing the __main__ block below).
+initialize_database()
+
 if __name__ == "__main__":
-    initialize_database()
     print("RentHub is starting... open http://127.0.0.1:5000 in your browser")
     app.run(host="0.0.0.0", port=5000, debug=True)
